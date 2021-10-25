@@ -1,0 +1,9 @@
+ //it will be added in docker
+node_modules
+
+//will be created n docker image
+dist
+
+
+//do not need to run docker image
+test
