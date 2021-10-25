@@ -11,7 +11,7 @@ import { CartItem } from '@/models/cart-item';
 // const localStorageValue = window.localStorage.getItem(CART_STORAGE_KEY) || "[]";
 // const defaultCarts = JSON.parse(localStorageValue);
 
-const findProductInCartById = (cart: CartItem[], productId: string) =>
+const findProductInCartById = (cart: CartItem[] = [], productId: string) =>
 	cart.find((c: CartItem) => c.product.id === productId);
 
 interface CartState {
@@ -77,7 +77,7 @@ const cartModuleStore: Module<CartState, any> = {
 			profileApi
 				.fetchCart()
 				.then(data => {
-					commit('setCartItems', data);
+					commit('setCartItems', data?.data?.data?.cart?.items || []);
 				})
 				.catch(e => {
 					commit('setErrorMessage', e.message);

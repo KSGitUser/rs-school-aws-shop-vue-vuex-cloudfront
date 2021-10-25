@@ -5,5 +5,5 @@ export const API_PATHS = {
 	order: MAIN_URL,
 	import: 'https://6d79566ly4.execute-api.eu-west-1.amazonaws.com/dev',
 	bff: MAIN_URL,
-	cart: MAIN_URL,
+	cart: 'http://ksgit-cart-api-dev.eu-west-1.elasticbeanstalk.com/api',
 };
